@@ -1,22 +1,23 @@
 import React from 'react';
-import {Button, ThemeProvider, createMuiTheme} from '@material-ui/core';
+import {ThemeProvider, createMuiTheme} from '@material-ui/core';
+import Home from './Home';
+
 
 function App() {
 
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: '#f44336',
+        main: '#cc2',
       },
       secondary: {
-        main: '#7986cb',
+        main: '#42a5f5',
       },
     },
   });
-
   return (
     <ThemeProvider theme={theme}>
-    <Button variant="contained" color="secondary">Hellow World Material UI</Button>
+    <Home />
     </ThemeProvider>
   );
 }
