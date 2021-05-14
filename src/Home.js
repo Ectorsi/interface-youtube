@@ -11,8 +11,10 @@ import {
   ListItemText,
   Divider,
   Box,
-  Typography, 
+  Typography,
+  
 } from '@material-ui/core';
+import AddCircle from '@material-ui/icons/AddCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import preto from './assets/images/preto.png';
@@ -25,7 +27,7 @@ import VideoLibrary from '@material-ui/icons/VideoLibrary';
 import History from '@material-ui/icons/History';
 import MoreVert from '@material-ui/icons/MoreVert';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListSubheader from '@material-ui/core/ListSubheader';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -86,6 +88,8 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
 
   const classes = useStyles();
+
+  
 
   return (
     <div className={classes.root}>
@@ -198,20 +202,38 @@ function Home() {
             </Box>
         </Box>
         <Divider />
-        <List className={classes.root} subheader={<li />}>
-      {[0, 1, 2, 3, 4].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-            <ListSubheader>{`I'm sticky ${sectionId}`}</ListSubheader>
-            {[0, 1, 2].map((item) => (
-              <ListItem key={`item-${sectionId}-${item}`}>
-                <ListItemText primary={`Item ${item}`} />
-              </ListItem>
-            ))}
-          </ul>
-        </li>
-      ))}
-    </List>
+        <List>
+              <ListItem button classes={{root: classes.listItem}}>
+              <ListItemIcon>
+                <AddCircle />
+              </ListItemIcon>
+                <ListItemText primary={'Música'}/>
+              </ListItem> 
+              <ListItem button classes={{root: classes.listItem}}>
+              <ListItemIcon>
+                <AddCircle />
+              </ListItemIcon>
+                <ListItemText primary={'Esportes'}/>
+              </ListItem> 
+              <ListItem button classes={{root: classes.listItem}}>
+              <ListItemIcon>
+                <AddCircle />
+              </ListItemIcon>
+                <ListItemText primary={'Josgos'}/>
+              </ListItem> 
+              <ListItem button classes={{root: classes.listItem}}>
+              <ListItemIcon>
+                <AddCircle />
+              </ListItemIcon>
+                <ListItemText primary={'Filmes'}/>
+              </ListItem> 
+              <ListItem button classes={{root: classes.listItem}}>
+              <ListItemIcon>
+                <AddCircle />
+              </ListItemIcon>
+                <ListItemText primary={'Notícias'}/>
+              </ListItem> 
+        </List>
       </Drawer>
     </div>
   )
